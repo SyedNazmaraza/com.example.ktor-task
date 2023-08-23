@@ -19,8 +19,7 @@ class FilterSchemeWithId(private val repo:SchemeRepository) {
                 val filter = request.request.filter
                 val date = result.response.data
                 val list = arrayListOf<Data>()
-                var starts: LocalDate? = null
-                starts = if (filter.endsWith("M")) {
+                val starts = if (filter.endsWith("M")) {
                     presentDate.minusMonths(filter.removeSuffix("M").toLong())
                 } else if (filter.endsWith("W")) {
                     presentDate.minusWeeks(filter.removeSuffix("W").toLong())
