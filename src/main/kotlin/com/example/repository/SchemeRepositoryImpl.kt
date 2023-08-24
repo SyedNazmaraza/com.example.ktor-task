@@ -8,7 +8,6 @@ import com.example.model.SchemeRequest
 import com.example.utils.BaseResponse
 import com.example.utils.toSchema
 import org.jetbrains.exposed.sql.insert
-import org.jetbrains.exposed.sql.insertAndGetId
 import org.jetbrains.exposed.sql.selectAll
 
 class SchemeRepositoryImpl : SchemeRepository{

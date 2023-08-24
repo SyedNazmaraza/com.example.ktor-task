@@ -10,7 +10,7 @@ import com.example.utils.ErrorCodes
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-class FilterSchemeWithId(private val repo:SchemeRepository) {
+class FilterSchemeWithId{
     suspend operator fun invoke(request:SchemeRequest):BaseResponse<SchemeWithIdModel> {
         val result = gettingDataByID(request.request.schemeID)
         if (result is BaseResponse.SuccessResponse) {

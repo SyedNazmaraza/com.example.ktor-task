@@ -15,9 +15,6 @@ fun Application.configKoin(){
         single <SchemeRepository>{SchemeRepositoryImpl()}
         single { GetAllSchemes(get()) }
         single { SearchScheme(get()) }
-        single { FilterSchemeWithId(get()) }
-
-
     }
     install(Koin){
         modules(module)
