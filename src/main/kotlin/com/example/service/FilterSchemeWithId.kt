@@ -24,13 +24,13 @@ class FilterSchemeWithId(private val repo:SchemeRepository) {
                 } else if (filter.endsWith("W")) {
                     presentDate.minusWeeks(filter.removeSuffix("W").toLong())
                 } else if (filter.endsWith("Y")) {
-                    presentDate.minusWeeks(filter.removeSuffix("Y").toLong())
+                    presentDate.minusYears(filter.removeSuffix("Y").toLong())
                 } else {
                     return BaseResponse.ErrorResponse(ErrorCodes.BAD_REQUEST, ErrorCodes.BAD_REQUEST.msg)
                 }
                 date.forEach {
                     val d = LocalDate.parse(it.date, DateTimeFormatter.ofPattern("dd-MM-yyyy"))
-                    if (d.isAfter(starts) && d.isBefore(presentDate)) {
+                    if (d.isAfter(starts) && d.isBefore(presentDate) ) {
                         list.add(it)
                     }
                 }

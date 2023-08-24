@@ -7,6 +7,7 @@ import com.example.model.SchemeModel
 import com.example.model.SchemeRequest
 import com.example.utils.BaseResponse
 import com.example.utils.toSchema
+import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.insertAndGetId
 import org.jetbrains.exposed.sql.selectAll
 
@@ -14,7 +15,7 @@ class SchemeRepositoryImpl : SchemeRepository{
     override suspend fun addScheme(model: SchemeModel): BaseResponse<String> {
         return try {
             dbQuery {
-                SchemeTable.insertAndGetId {
+                SchemeTable.insert {
                     it[schemeName] = model.schemeName
                     it[schemeCode] = model.schemeCode
                 }
