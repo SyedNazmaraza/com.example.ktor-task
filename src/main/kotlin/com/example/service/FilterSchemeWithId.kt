@@ -4,7 +4,6 @@ import com.example.client.gettingDataByID
 import com.example.model.Data
 import com.example.model.SchemeRequest
 import com.example.model.SchemeWithIdModel
-import com.example.repository.SchemeRepository
 import com.example.utils.BaseResponse
 import com.example.utils.ErrorCodes
 import java.time.LocalDate

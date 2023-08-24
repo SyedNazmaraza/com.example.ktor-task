@@ -1,9 +1,7 @@
 package com.example.plugins
 
-import com.example.model.SchemeWithIdModel
 import com.example.repository.SchemeRepository
 import com.example.repository.SchemeRepositoryImpl
-import com.example.service.FilterSchemeWithId
 import com.example.service.GetAllSchemes
 import com.example.service.SearchScheme
 import org.koin.dsl.module
